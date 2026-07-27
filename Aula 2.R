@@ -1,3 +1,6 @@
+#AULA 2:
+
+#PARTE 1
 #Operadores Comparativos:
 #Tem a função de testar condições:
 
@@ -52,9 +55,13 @@ notas_meninos
 notas_totais<- c(notas_meninas, notas_meninos)
 notas_totais[5] #Encontrando a posição 5 no vetor notas_totais
 
+#Criando sequências simples, do numero 1 ao 100, de 1 a 1.
+a<-1:100
+a
+
 #Criando uma sequência de números pares
-x<- seq(from=2, to = 100, by =2 )
-x
+b<- seq(from=2, to = 100, by =2 )
+b
 
 #Utilizando a função rep() para criar listas 
 y<- rep(1,5)
@@ -69,6 +76,21 @@ w
 k<- paste("tr",1:5,sep="") #Repetindo o tr 5 vezes com separador ""
 k
 
+
+#Utilizando outras funções para vetores:
+#lenght() - tamanho do vetor
+#max() - valor maximo no vetor
+#min() - valor minimo no vetor
+#mean() - media dos valores no vetor
+
+
+notas <-c(5,6.5,8,9,4,3.5,7,5.5,4.5,7.5,8.5,2.5)
+length(notas) 
+max(notas)
+min(notas)
+mean(notas)
+
+
 #PARTE 3:
 #Criando nossas primeiras matrizes: 
 
@@ -78,6 +100,6 @@ x
 y<-matrix(c(1,2,3,4,5,6,7,8,9,10,11,12),4,3) 
 y
 
-y[1,]<-c(0,0,0)
+y[,1]<-c(0,0,0,0)
 y
 
