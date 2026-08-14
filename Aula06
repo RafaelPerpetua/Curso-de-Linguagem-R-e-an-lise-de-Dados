@@ -1,0 +1,56 @@
+#Aula 06 - Introdução à estatística no R
+
+#Estatística descritiva:
+
+#Importando o banco de dados:
+
+banco<- read.csv('dados_estatistica_r.csv') #após selecionar a pasta do csv(CRLT+SHIFT+H)
+banco #Banco de dados já importado
+
+#Exemplo 1 - Média e mediana:
+
+#a) média e mediana das notas da escola: 
+notas_gerais<- banco$Nota.Final #selecionamos todas as Notas finais do banco
+
+mean(notas_gerais)
+median(notas_gerais)
+
+#b) Média e mediana por idade = 16
+
+idade_16<- banco[banco$Idade ==16,]
+length(idade_16$Nome) #verificando quantas pessoas tem a idade igual a 16
+
+mean(idade_16$Nota.Final)
+median(idade_16$Nota.Final)
+
+#c) Média e mediana de idade:
+
+mean(banco$Idade)
+median(banco$Idade)
+
+#Criando a função moda:
+
+moda <- function(y){
+  z <- table(y)          # Contagem de frequências
+  w <- names(which.max(z)) # Identificação do valor mais frequente
+  return(as.numeric(w))  # Conversão e retorno
+}
+
+#Exemplo 2 - Utilizando a função no nosso banco:
+moda(notas_gerais)
+moda(banco$Idade) 
+
+
+#Exemplo 3 - Utilizando summary para analisar quartis:
+
+summary(notas_gerais)
+
+#Exemplo 4 - Utilizando Desvio padrão e variancia
+
+var(notas_gerais) #Variância 
+
+sd(notas_gerais) #Desvio padrão
+
+#Exemplo 5 - Boxplot no banco de dados
+
+boxplot(notas_gerais)
